@@ -1,5 +1,5 @@
 server:
-  port: 8089
+  port: 8086
 
 jwt:
     secret: ${JWT_SECRET}  
