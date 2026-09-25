@@ -1,2 +1,25 @@
-server : 
-  port : 8087
+server:
+  port: 8087
+
+jwt:
+    secret: ${JWT_SECRET}  
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/finance_Management
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=100,expireAfterWrite=5m
